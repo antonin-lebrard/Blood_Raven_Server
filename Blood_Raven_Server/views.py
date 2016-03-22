@@ -3,6 +3,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import *
 from django.views.generic import TemplateView
 from django.conf import settings
+from rest_framework import viewsets
+from game.models import Character, Room
+from .serializers import CharacterSerializer, RoomSerializer
 
 class LoginView(TemplateView):
   template_name = 'login.html'
@@ -21,3 +24,11 @@ class LogoutView(TemplateView):
   def get(self, request, **kwargs):
     logout(request)
     return render(request, self.template_name)
+
+class CharacterViewSet(viewsets.ModelViewSet):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
+
+class RoomViewSet(viewsets.ModelViewSet):
+    queryset = Room.objects.all()
+    serializer_class = RoomSerializer

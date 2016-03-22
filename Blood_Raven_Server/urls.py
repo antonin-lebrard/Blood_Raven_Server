@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .views import LoginView, LogoutView
+from .views import LoginView, LogoutView, CharacterViewSet, RoomViewSet
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'character', CharacterViewSet)
+router.register(r'room', RoomViewSet)
 
 urlpatterns = [
     url(r'^admin', admin.site.urls),
     url(r'^$', LoginView.as_view()),
     url(r'^logout$', LogoutView.as_view()),
     url(r'^game/', include('game.urls')),
+    url(r'^api/', include(router.urls)),
 ]

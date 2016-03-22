@@ -12,7 +12,7 @@ class Character(models.Model):
     # OneToOne with User
 
     def moove(self, portal):
-        if not portal.est_actif:
+        if not portal.is_enable:
             print("Portal is not enable")
         else:
             if portal.entry == self.room:
