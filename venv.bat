@@ -1,0 +1,1 @@
+call "C:\Users\rernande\venv\Scripts\activate.bat"
