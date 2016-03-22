@@ -53,6 +53,7 @@ coverage.xml
 *.log
 manage.py
 db.sqlite3
+game/migrations
 
 # Sphinx documentation
 docs/_build/
