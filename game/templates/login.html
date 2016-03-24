@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form action="" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" value="" placeholder="Name">
+    <input type="password" name="password" value="" placeholder="Password">
+    <button type="submit">Login</button>
+    <input type="hidden" name="next" value="{{next|escape}}" />
+    </form>
+    {% if login_form.non_field_errors %}
+        <p>{{ login_form.non_field_errors }}</p>
+    {% endif %}
+</body>
+</html>

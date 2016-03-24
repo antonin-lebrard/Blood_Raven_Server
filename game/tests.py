@@ -1,12 +1,8 @@
-from django.test import TestCase
-
 # Create your tests here.
 
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eboutique.settings")
-
-from django.db import models
 from .models import Character, Room, Portal
 
 # Rooms

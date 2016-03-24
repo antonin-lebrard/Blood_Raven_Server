@@ -20,6 +20,7 @@ class Character(models.Model):
                 print("Character has been mooved")
             else:
                 print("Player has no access to portal entry")
+
     def __unicode__(self):
         "Character id: {0}".format(self.id)
 
