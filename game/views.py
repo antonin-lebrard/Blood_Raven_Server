@@ -5,7 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .models import Character, Room, Portal
+from game.serializers import CharacterSerializer, RoomSerializer
+from rest_framework import viewsets
+from game.models import Character, Room, Portal
 from game.forms import LoginForm
 
 def login_view(request):
@@ -47,19 +49,10 @@ def logout_view(request):
         logout(request)
     return  HttpResponseRedirect('/home')
 
-# class LogoutView(TemplateView):
-#   template_name = 'logout.html'
-#
-#   def get(self, request, **kwargs):
-#     logout(request)
-#     return render(request, self.template_name)
-#
-# class CharacterViewSet(viewsets.ModelViewSet):
-#     queryset = Character.objects.all()
-#     serializer_class = CharacterSerializer
-#
-# class RoomViewSet(viewsets.ModelViewSet):
-#     queryset = Room.objects.all()
-#     serializer_class = RoomSerializer
+class CharacterViewSet(viewsets.ModelViewSet):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
 
-
+class RoomViewSet(viewsets.ModelViewSet):
+    queryset = Room.objects.all()
+    serializer_class = RoomSerializer
