@@ -1,1 +1,1 @@
-call "C:\Users\rernande\PycharmProjects\crepes_bretonnes\venv\Scripts\activate.bat"
+call ".\venv\Scripts\activate.bat"

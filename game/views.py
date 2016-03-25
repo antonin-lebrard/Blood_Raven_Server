@@ -1,11 +1,11 @@
 # Create your views here.
 
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .models import Character
+from .models import Character, Room, Portal
 from game.forms import LoginForm
 
 def login_view(request):
@@ -14,11 +14,11 @@ def login_view(request):
         user = form.login(request)
         if user:
             login(request, user)
-            return redirect(home)# Redirect to a success page.
+            return redirect(play)# Redirect to a success page.
     return render(request, 'login.html', {'login_form': form })
 
 @login_required
-def home(request):
+def play(request):
     user = request.user
     username = user.get_username()
     char = None
@@ -26,20 +26,26 @@ def home(request):
     try:
         char = Character.objects.filter(Q(user=user))[0]
         char_name = char.name
-        room_id = char.room.id
-        # TODO: requete qui va chercher les directions dispo
+        room_id = char.room.name
+        portal_available = Portal.objects.filter(Q(entry=char.room))
     except Character.DoesNotExist:
         pass # redirect to createchar.html
     except Exception:
         pass # ne rien faire bien sur
-    return render(request, 'home.html', locals())
+    return render(request, 'play.html', locals())
     # redirect to /game/play (Anto)
     # qui effectue une requete /api/char_status
     # j'identifie de cette façon request.user.char et renvoie
     # {
     #   "name": "Conan",
+    # toutes les infos > plusierus requetes
 	#   "room": "/api/room/room_id"
     # }
+
+def logout_view(request):
+    if request.user.is_authenticated():
+        logout(request)
+    return  HttpResponseRedirect('/home')
 
 # class LogoutView(TemplateView):
 #   template_name = 'logout.html'

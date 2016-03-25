@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="fr">
+    <link rel="stylesheet" href="/media/css/style.css" />
+   <title>{% block title %}Blood Raven{% endblock %}</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a href="/home">Accueil</a> |
+            <a href="/game/play">Jouer</a> |
+            <a href="/game/logout">Déconnexion</a>
+		</nav>
+	</header>
+    <section>
+           {% block content %}{% endblock %}
+    </section>
+	<footer>
+        {% load static %}
+        <img src="{% static 'Blood_Raven_Server/img/blood_raven.jpg' %}">
+		<p>Blood Raven</p>
+	</footer>
+</body>
+</html>
