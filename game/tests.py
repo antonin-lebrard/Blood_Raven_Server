@@ -1,9 +1,7 @@
 # Create your tests here.
 
-import os
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eboutique.settings")
 from .models import Character, Room, Portal
+from django.contrib.auth.models import User
 
 # Rooms
 r1 = Room()
@@ -13,8 +11,12 @@ r2.save()
 r3 = Room()
 r3.save()
 
+# Users
+u1 = User.objects.create_superuser(username='rernande', email='trash@gmail.com', password='rernande')
+u2 = User.objects.create_user(username='antonin', password='antonin')
+
 # Characters
-c1 = Character(name="Conan", room=r1)
+c1 = Character(name='Conan', room=r1, user=u1)
 c1.save()
 
 # Portals

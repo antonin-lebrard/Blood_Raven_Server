@@ -1,17 +1,19 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Room(models.Model):
+    name = models.CharField(max_length=20)
+
     def __unicode__(self):
         return "Room id: {0}".format(self.id)
 
 class Character(models.Model):
+    user = models.OneToOneField(User)
     name = models.CharField(max_length=20)
     room = models.ForeignKey(Room)
-    # OneToOne with User
 
-    def moove(self, portal):
+    def moove(self, portal): #TODO: direction
         if not portal.is_enable:
             print("Portal is not enable")
         else:

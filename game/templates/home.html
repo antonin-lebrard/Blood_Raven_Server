@@ -5,6 +5,13 @@
     <title>Accueil</title>
 </head>
     <body>
-    <h1>Bienvenue !</h1>
+    <h1>Bienvenue {{ username }}!</h1>
+    <h2>Votre personnage {{ char_name }} est situé dans la salle n° {{ room_id }}</h2>
+    <h3>Vous pouvez aller au</h3>
+    {% for direction in directions %}
+    	<p>{{ direction }}</p>
+    {% empty %}
+        <p>nulle part...</p>
+    {% endfor %}
     </body>
 </html>
