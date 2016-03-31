@@ -16,7 +16,7 @@ r3 = Room(name='3')
 r3.save()
 
 # Characters
-c1 = Character(name='Conan', room=r1, user=u1)
+c1 = Character(name='Conan', room=r1, user=u2, description='Le barbare')
 c1.save()
 
 # Portals

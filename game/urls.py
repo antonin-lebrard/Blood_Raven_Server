@@ -7,9 +7,10 @@ router.register(r'character', CharacterViewSet)
 router.register(r'room', RoomViewSet)
 
 urlpatterns = [
-    url(r'^play', play),
-    url(r'^login', login_view),
-    url(r'^logout', logout_view),
-    #url(r'^createcharacter$', views.home),
+    url(r'^play', play, name='play'),
+    url(r'^login', login_view, name='login'),
+    url(r'^logout', logout_view, name='logout'),
+    url(r'^register', play, name='register'),
+    url(r'^createcharacter', play, name='createcharacter'),
     url(r'^api/', include(router.urls)),
 ]

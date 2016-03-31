@@ -19,7 +19,8 @@ from django.contrib import admin
 from Blood_Raven_Server.views import home
 
 urlpatterns = [
-    url(r'^home', home),
+    url(r'^home', home, name='home'),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin', admin.site.urls),
     url(r'^game/', include('game.urls')),
 ]

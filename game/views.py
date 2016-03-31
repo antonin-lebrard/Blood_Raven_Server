@@ -9,6 +9,7 @@ from game.serializers import CharacterSerializer, RoomSerializer
 from rest_framework import viewsets
 from game.models import Character, Room, Portal
 from game.forms import LoginForm
+from django.http import Http404
 
 def login_view(request):
     form = LoginForm(request.POST or None)
@@ -26,14 +27,14 @@ def play(request):
     char = None
     room_id = None
     try:
-        char = Character.objects.filter(Q(user=user))[0]
+        char = Character.objects.get(Q(user=user))
         char_name = char.name
         room_id = char.room.name
         portal_available = Portal.objects.filter(Q(entry=char.room))
     except Character.DoesNotExist:
         pass # redirect to createchar.html
     except Exception:
-        pass # ne rien faire bien sur
+        raise Http404()
     return render(request, 'play.html', locals())
     # redirect to /game/play (Anto)
     # qui effectue une requete /api/char_status
@@ -47,7 +48,7 @@ def play(request):
 def logout_view(request):
     if request.user.is_authenticated():
         logout(request)
-    return  HttpResponseRedirect('/home')
+    return  HttpResponseRedirect('play')
 
 class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
