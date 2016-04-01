@@ -14,6 +14,7 @@ class Character(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=50, blank=True)
     room = models.ForeignKey(Room)
+    #avatar
 
     def moove(self, direction):
         portal = Portal.objects.get(Q(entry=self.room) and Q(direction=direction))

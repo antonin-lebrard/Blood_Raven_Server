@@ -5,11 +5,16 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from game.serializers import CharacterSerializer, RoomSerializer
+from game.serializers import CharacterSerializer, RoomSerializer, UserSerializer
 from rest_framework import viewsets
 from game.models import Character, Room, Portal
 from game.forms import LoginForm
 from django.http import Http404
+from django.contrib.auth.models import User
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 
 def login_view(request):
     form = LoginForm(request.POST or None)
@@ -54,6 +59,32 @@ class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
 
+
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
+
+@api_view(['GET'])
+def current_user(request):
+    user = request.user
+    username = user.get_username()
+    # TODO: error try/catch
+    char = Character.objects.get(Q(user=user))
+    char_name = char.name
+    room_name = char.room.name
+    portals_available = Portal.objects.filter(Q(entry=char.room))
+    directions_available = [portal_available.direction for portal_available in portals_available]
+
+    return Response({
+        'username': username,
+        'charname': char_name,
+        'roomname': room_name,
+        #'directions': {
+        #    directions_available
+        #}
+    })
+
+class UserViewSet(viewsets.ModelViewSet):
+    model = User
+    serializer_class = UserSerializer
+    queryset = User.objects.all()

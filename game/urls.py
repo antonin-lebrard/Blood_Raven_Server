@@ -1,10 +1,11 @@
 from django.conf.urls import url, include
-from game.views import play, login_view, logout_view, RoomViewSet, CharacterViewSet
+from game.views import play, login_view, logout_view, RoomViewSet, CharacterViewSet, current_user, UserViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'character', CharacterViewSet)
 router.register(r'room', RoomViewSet)
+router.register(r'room', UserViewSet)
 
 urlpatterns = [
     url(r'^play', play, name='play'),
@@ -12,5 +13,6 @@ urlpatterns = [
     url(r'^logout', logout_view, name='logout'),
     url(r'^register', play, name='register'),
     url(r'^createcharacter', play, name='createcharacter'),
+    url(r'^api/user/current', current_user),
     url(r'^api/', include(router.urls)),
 ]
