@@ -1,26 +1,34 @@
 # Create your tests here.
+import django
+from django.db.models import Q
 
-from .models import Character, Room, Portal
+from django.test import TestCase
+from game.models import Character, Portal, Room
 from django.contrib.auth.models import User
 
 # Users
-u1 = User.objects.create_superuser(username='rernande', email='trash@gmail.com', password='rernande') #Attention get_or_create
-u2 = User.objects.create_user(username='antonin', password='antonin')
+class UserTestCase(TestCase):
+    def setUp(self):
+        User.objects.create_superuser(username='rernande', email='trash@gmail.com',password='rernande')
+        User.objects.create_user(username='antonin', password='antonin')
 
-# Rooms
-r1 = Room(name='1')
-r1.save()
-r2 = Room(name='2')
-r2.save()
-r3 = Room(name='3')
-r3.save()
+class RoomTestCase(TestCase):
+    def setUp(self):
+        Room.objects.create(name='1')
+        Room.objects.create(name='2')
+        Room.objects.create(name='3')
 
-# Characters
-c1 = Character(name='Conan', room=r1, user=u2, description='Le barbare')
-c1.save()
+class PortalTestCase(TestCase):
+    def setUp(self):
+        Portal.objects.create(direction='N', entry=Room.objects.get(name='1'), exit=Room.objects.create(name='2'))
+        Portal.objects.create(direction='E', entry=Room.objects.get(name='2'), exit=Room.objects.create(name='3'))
 
-# Portals
-p1 = Portal(direction='N', entry=r1, exit=r2)
-p1.save()
-p2 = Portal(direction='E', entry=r2, exit=r3)
-p2.save()
+class CharacterTestCase(TestCase):
+    def setUp(self):
+        room1 = Room.objects.create(name='1')
+        Portal.objects.create(direction='N', entry=room1, exit=Room.objects.create(name='2'))
+        Character.objects.create(user=User.objects.create_superuser(username='rernande', email='trash@gmail.com',password='rernande'), name='Conan', description='Le barare', room=room1)
+
+    def test_characters_can_moove(self):
+        conan = Character.objects.get(name='Conan')
+        self.assertEqual(conan.move('N'), 'Conan has been moved to room 2')

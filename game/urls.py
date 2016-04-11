@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from game.views import play, login_view, logout_view, RoomViewSet, CharacterViewSet, current_user, UserViewSet
+from game.views import play, login_view, logout_view, RoomViewSet, CharacterViewSet, current_user, UserViewSet, move_char_to_direction
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -11,8 +11,9 @@ urlpatterns = [
     url(r'^play', play, name='play'),
     url(r'^login', login_view, name='login'),
     url(r'^logout', logout_view, name='logout'),
-    url(r'^register', play, name='register'),
-    url(r'^createcharacter', play, name='createcharacter'),
-    url(r'^api/user/current', current_user),
+    #url(r'^register', play, name='register'),
+    #url(r'^createcharacter', play, name='createcharacter'),
+    url(r'^api/character/(?P<char_name>\w{1,50})/move/(?P<direction>\w{1})$', move_char_to_direction),
+    url(r'^api/user/current', current_user, name='current_user'),
     url(r'^api/', include(router.urls)),
 ]

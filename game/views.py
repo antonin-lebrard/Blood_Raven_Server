@@ -69,19 +69,32 @@ def current_user(request):
     user = request.user
     username = user.get_username()
     # TODO: error try/catch
-    char = Character.objects.get(Q(user=user))
+    char = Character.objects.get(user=user)
     char_name = char.name
+    char_description = char.description
     room_name = char.room.name
-    portals_available = Portal.objects.filter(Q(entry=char.room))
-    directions_available = [portal_available.direction for portal_available in portals_available]
-
+    portals_available = Portal.objects.filter(entry=char.room)
+    directions_available = [portal_available.direction for portal_available in portals_available if portal_available.is_enable]
+    tmp = 'game/api/' + char_name + '/move/'
+    dic = {}
+    for direction_available in directions_available:
+        dic[direction_available] = tmp + direction_available
     return Response({
         'username': username,
         'charname': char_name,
+        'chardescription': char_description,
         'roomname': room_name,
-        #'directions': {
-        #    directions_available
-        #}
+        'directions': dic
+    })
+
+@api_view(['PUT'])
+def move_char_to_direction(request, char_name, direction):
+    char = Character.objects.get(name = char_name)
+    char.move(direction)
+    char.save()
+    return Response({
+        'name': char_name,
+        'room': char.room.name,
     })
 
 class UserViewSet(viewsets.ModelViewSet):

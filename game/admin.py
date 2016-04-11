@@ -42,8 +42,7 @@ class CharacterAdmin(admin.ModelAdmin):
     overview_description.short_name = 'Description overview'
 
     def save_model(self, request, obj, form, change):
-        if change:
-            super(CharacterAdmin, self).save_model(request, obj, form, change)
+        super(CharacterAdmin, self).save_model(request, obj, form, change)
 
 class RoomAdmin(admin.ModelAdmin):
     list_display   = ('id', 'name', )
@@ -61,11 +60,10 @@ class RoomAdmin(admin.ModelAdmin):
     )
 
     def save_model(self, request, obj, form, change):
-        if change:
-            super(RoomAdmin, self).save_model(request, obj, form, change)
+        super(RoomAdmin, self).save_model(request, obj, form, change)
 
 class PortalAdmin(admin.ModelAdmin):
-    readonly_fields = ('entry', 'exit')
+    #readonly_fields = ('entry', 'exit')
     list_display   = ('id', 'is_enable', 'direction', 'entry', 'exit')
     list_filter    = ('is_enable', 'direction', 'entry', 'exit')
     ordering       = ('entry', )
@@ -88,8 +86,7 @@ class PortalAdmin(admin.ModelAdmin):
     )
 
     def save_model(self, request, obj, form, change):
-        if change:
-            super(PortalAdmin, self).save_model(request, obj, form, change)
+        super(PortalAdmin, self).save_model(request, obj, form, change)
 
 admin.site.register(Character, CharacterAdmin)
 admin.site.register(Portal, PortalAdmin)

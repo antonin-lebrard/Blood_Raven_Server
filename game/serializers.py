@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Character
-        fields = ('user', 'name', 'description', 'room')
+        fields = ('name', 'description', 'room')
 
 class RoomSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -15,4 +15,4 @@ class RoomSerializer(serializers.HyperlinkedModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'charname')
+        fields = ('username', )
