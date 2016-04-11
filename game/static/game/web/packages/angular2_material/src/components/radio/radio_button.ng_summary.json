@@ -1,0 +1,304 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.radio.radio_button",
+    "3": [
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "ViewEncapsulation",
+          "Host",
+          "SkipSelf",
+          "Attribute",
+          "Optional",
+          "OnChanges",
+          "OnInit"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "StringWrapper",
+          "NumberWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper",
+          "EventEmitter"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/browser.dart",
+        "2": [
+          "Event",
+          "KeyboardEvent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2_material/src/components/radio/radio_dispatcher.dart",
+        "2": [
+          "MdRadioDispatcher"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2_material/src/core/key_codes.dart",
+        "2": [
+          "KeyCodes"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdRadioGroup",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-radio-group\""
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"change\"]"
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"disabled\", \"value\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"role\" : \"radiogroup\", \"[attr.aria-disabled]\" : \"disabled\", \"[attr.aria-activedescendant]\" : \"activedescendant\", \"(keydown)\" : \"onKeydown(\\$event)\", \"[tabindex]\" : \"tabindex\"}"
+              },
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/radio/radio_group.html\""
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"tabindex\")"
+            ],
+            "4": "tabindex"
+          },
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"disabled\")"
+            ],
+            "4": "disabled"
+          },
+          {
+            "1": "MdRadioDispatcher",
+            "4": "radioDispatcher"
+          }
+        ],
+        "6": [
+          "OnChanges"
+        ]
+      },
+      {
+        "1": "MdRadioButton",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-radio-button\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"id\", \"name\", \"value\", \"checked\", \"disabled\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"role\" : \"radio\", \"[id]\" : \"id\", \"[tabindex]\" : \"tabindex\", \"[attr.aria-checked]\" : \"checked\", \"[attr.aria-disabled]\" : \"disabled\", \"(keydown)\" : \"onKeydown(\\$event)\"}"
+              },
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/radio/radio_button.html\""
+              },
+              {
+                "1": "directives",
+                "2": "const []"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "MdRadioGroup",
+            "3": [
+              "const Optional()",
+              "const SkipSelf()",
+              "const Host()"
+            ],
+            "4": "radioGroup"
+          },
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"id\")"
+            ],
+            "4": "id"
+          },
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"tabindex\")"
+            ],
+            "4": "tabindex"
+          },
+          {
+            "1": "MdRadioDispatcher",
+            "4": "radioDispatcher"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ]
+      }
+    ],
+    "6": "radio_button.dart"
+  },
+  "MdRadioGroup": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-radio-group",
+      "exportAs": null,
+      "type": {
+        "name": "MdRadioGroup",
+        "moduleUrl": "asset:angular2_material/lib/src/components/radio/radio_button.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "disabled": "disabled",
+        "value": "value"
+      },
+      "outputs": {
+        "change": "change"
+      },
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {
+        "tabindex": "tabindex",
+        "attr.aria-activedescendant": "activedescendant",
+        "attr.aria-disabled": "disabled"
+      },
+      "hostAttributes": {
+        "role": "radiogroup"
+      },
+      "lifecycleHooks": [
+        3
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>@import \"package:angular2_material/src/components/radio/radio-group.css\";</style>\n<ng-content></ng-content>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/radio/radio_group.html",
+        "styles": [
+          ""
+        ],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/radio/radio-group.css"
+        ],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "MdRadioButton": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-radio-button",
+      "exportAs": null,
+      "type": {
+        "name": "MdRadioButton",
+        "moduleUrl": "asset:angular2_material/lib/src/components/radio/radio_button.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "id": "id",
+        "name": "name",
+        "value": "value",
+        "checked": "checked",
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {
+        "tabindex": "tabindex",
+        "attr.aria-disabled": "disabled",
+        "id": "id",
+        "attr.aria-checked": "checked"
+      },
+      "hostAttributes": {
+        "role": "radio"
+      },
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>@import \"package:angular2_material/src/components/radio/radio-button.css\";</style>\n\n<!-- TODO(jelbourn): render the radio on either side of the content -->\n\n<label role=\"radio\" class=\"md-radio-root\"\n    [class.md-radio-checked]=\"checked\"\n    (click)=\"select($event)\">\n  <!-- The actual `radio` part of the control. -->\n  <div class=\"md-radio-container\">\n    <div class=\"md-radio-off\"></div>\n    <div class=\"md-radio-on\"></div>\n  </div>\n\n  <!-- The label for radio control. -->\n  <div class=\"md-radio-label\">\n      <ng-content></ng-content>\n  </div>\n</label>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/radio/radio_button.html",
+        "styles": [
+          ""
+        ],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/radio/radio-button.css"
+        ],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+#header-name{
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+    padding: 0 10px;
+    color: white;
+    background-color: /*#f44336*/#3f51b5;
+}
+#story-area{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+#text-container{
+    margin: 0;
+    background-color: #fff;
+    min-width: 700px;
+    width: 50%;
+    min-height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+#content{
+    padding: 10px;
+}
+#main-text-area{
+    position: relative;
+}
+#dropping-shadow{
+    height: 6px;
+    bottom: -6px;
+    box-shadow: inset 0 5px 6px -3px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}

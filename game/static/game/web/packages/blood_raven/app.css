@@ -1,0 +1,33 @@
+story-comp{
+    width: 100%;
+}
+dir-comp{
+    float: left;
+}
+player-comp{
+    float: left;
+}
+room-comp{
+    float: left;
+}
+
+.component{
+    margin: 10px;
+}
+
+#app{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#main-components{
+    display: flex;
+    justify-content: center;
+    flex-basis: 75%;
+}
+#actions-components{
+    display: flex;
+    justify-content: center;
+}

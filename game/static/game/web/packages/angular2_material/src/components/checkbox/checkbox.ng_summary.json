@@ -1,0 +1,157 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.checkbox.checkbox",
+    "3": [
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "View",
+          "Attribute",
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2_material/src/core/key_codes.dart",
+        "2": [
+          "KeyCodes"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/browser.dart",
+        "2": [
+          "KeyboardEvent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "NumberWrapper"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdCheckbox",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-checkbox\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"checked\", \"disabled\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"role\" : \"checkbox\", \"[attr.aria-checked]\" : \"checked\", \"[attr.aria-disabled]\" : \"disabled\", \"[tabindex]\" : \"tabindex\", \"(keydown)\" : \"onKeydown(\\$event)\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/checkbox/checkbox.html\""
+              },
+              {
+                "1": "directives",
+                "2": "const []"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"tabindex\")"
+            ],
+            "4": "tabindex"
+          }
+        ]
+      }
+    ],
+    "6": "checkbox.dart"
+  },
+  "MdCheckbox": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-checkbox",
+      "exportAs": null,
+      "type": {
+        "name": "MdCheckbox",
+        "moduleUrl": "asset:angular2_material/lib/src/components/checkbox/checkbox.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "checked": "checked",
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {
+        "tabindex": "tabindex",
+        "attr.aria-disabled": "disabled",
+        "attr.aria-checked": "checked"
+      },
+      "hostAttributes": {
+        "role": "checkbox"
+      },
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>@import \"package:angular2_material/src/components/checkbox/checkbox.css\";</style>\n\n<div (click)=\"toggle($event)\">\n  <div class=\"md-checkbox-container\">\n    <div class=\"md-checkbox-icon\"></div>\n  </div>\n  <div class=\"md-checkbox-label\"><ng-content></ng-content></div>\n</div>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/checkbox/checkbox.html",
+        "styles": [
+          ""
+        ],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/checkbox/checkbox.css"
+        ],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  }
+}

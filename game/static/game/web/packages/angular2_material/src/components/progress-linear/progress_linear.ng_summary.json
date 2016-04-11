@@ -1,0 +1,131 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.progress_linear.progress_linear",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "ViewEncapsulation",
+          "Attribute",
+          "OnChanges"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "isBlank"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/math.dart",
+        "2": [
+          "Math"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdProgressLinear",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-progress-linear\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"value\", \"bufferValue\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"role\" : \"progressbar\", \"aria-valuemin\" : \"0\", \"aria-valuemax\" : \"100\", \"[attr.aria-valuenow]\" : \"value\"}"
+              },
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/progress-linear/progress_linear.html\""
+              },
+              {
+                "1": "directives",
+                "2": "const []"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"mode\")"
+            ],
+            "4": "mode"
+          }
+        ],
+        "6": [
+          "OnChanges"
+        ]
+      }
+    ],
+    "6": "progress_linear.dart"
+  },
+  "MdProgressLinear": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-progress-linear",
+      "exportAs": null,
+      "type": {
+        "name": "MdProgressLinear",
+        "moduleUrl": "asset:angular2_material/lib/src/components/progress-linear/progress_linear.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "value": "value",
+        "bufferValue": "bufferValue"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "attr.aria-valuenow": "value"
+      },
+      "hostAttributes": {
+        "aria-valuemax": "100",
+        "aria-valuemin": "0",
+        "role": "progressbar"
+      },
+      "lifecycleHooks": [
+        3
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>@import \"package:angular2_material/src/components/progress-linear/progress_linear.css\";</style>\n\n<div class=\"md-progress-linear-container md-ready\">\n  <div class=\"md-progress-linear-dashed\"></div>\n  <div class=\"md-progress-linear-bar md-progress-linear-bar1\"\n      [style.transform]=\"secondaryBarTransform\"></div>\n  <div class=\"md-progress-linear-bar md-progress-linear-bar2\"\n      [style.transform]=\"primaryBarTransform\"></div>\n</div>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/progress-linear/progress_linear.html",
+        "styles": [
+          ""
+        ],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/progress-linear/progress_linear.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.direction",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2_material/src/components/button/button.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2_rbi/directives.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/service/direction_service.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/utils.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DirectionComponent",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'dir-comp'"
+              },
+              {
+                "1": "templateUrl",
+                "2": "'direction.html'"
+              },
+              {
+                "1": "viewProviders",
+                "2": "const [DirectionService, MdButton, MaterialButton]"
+              },
+              {
+                "1": "styleUrls",
+                "2": "const ['direction.css', '../globalComponentsPart.css']"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "DirectionService",
+            "4": "service"
+          }
+        ]
+      }
+    ],
+    "6": "direction.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2_material/src/components/button/button.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2_rbi/directives.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_component.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:blood_raven/service/direction_service.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:blood_raven/utils.template.dart",
+        "4": "i5"
+      }
+    ]
+  },
+  "DirectionComponent": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "dir-comp",
+      "exportAs": null,
+      "type": {
+        "name": "DirectionComponent",
+        "moduleUrl": "asset:blood_raven/lib/direction/direction.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div id=\"dir-comp\">\r\n    <div id=\"up-down\">\r\n        <mdButton [class.disabled]=\"up==null\" id=\"up\" (click)=\"up==null||up.doDefault()\">up</mdButton>\r\n        <mdButton [class.disabled]=\"down==null\" id=\"down\" (click)=\"down==null||down.doDefault()\">down</mdButton>\r\n    </div>\r\n    <div id=\"cardinal\">\r\n        <div id=\"north\"><mdButton [class.disabled]=\"north==null\" (click)=\"north==null||north.doDefault()\">N</mdButton></div>\r\n        <div id=\"ne-nw\">\r\n            <mdButton [class.disabled]=\"n_east==null\" (click)=\"n_east==null||n_east.doDefault()\">N-E</mdButton>\r\n            <mdButton [class.disabled]=\"n_west==null\" (click)=\"n_west==null||n_west.doDefault()\">N-W</mdButton>\r\n        </div>\r\n        <div id=\"e-w\">\r\n            <mdButton [class.disabled]=\"east==null\" (click)=\"east==null||east.doDefault()\">E</mdButton>\r\n            <mdButton [class.disabled]=\"west==null\" (click)=\"west==null||west.doDefault()\">W</mdButton>\r\n        </div>\r\n        <div id=\"se-sw\">\r\n            <mdButton [class.disabled]=\"s_east==null\" (click)=\"s_east==null||s_east.doDefault()\">S-E</mdButton>\r\n            <mdButton [class.disabled]=\"s_west==null\" (click)=\"s_west==null||s_west.doDefault()\">S-W</mdButton>\r\n        </div>\r\n        <div id=\"south\"><mdButton [class.disabled]=\"south==null\" (click)=\"south==null||south.doDefault()\">S</mdButton></div>\r\n    </div>\r\n    <div id=\"in-out\">\r\n        <mdButton [class.disabled]=\"into==null\" id=\"in\" (click)=\"into==null||into.doDefault()\">in</mdButton>\r\n        <mdButton [class.disabled]=\"out==null\" id=\"out\" (click)=\"out==null||out.doDefault()\">out</mdButton>\r\n    </div>\r\n</div>",
+        "templateUrl": "asset:blood_raven/lib/direction/direction.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:blood_raven/lib/direction/direction.css",
+          "asset:blood_raven/lib/globalComponentsPart.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

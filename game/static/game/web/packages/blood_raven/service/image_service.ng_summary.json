@@ -1,0 +1,35 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.image_service",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_service.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/utils.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ImageService",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "image_service.dart"
+  }
+}
