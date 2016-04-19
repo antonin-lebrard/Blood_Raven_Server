@@ -2,6 +2,7 @@
 
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
@@ -13,6 +14,7 @@ from django.http import Http404
 from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from game.forms import NewCharacterFrom
 from rest_framework.views import APIView
 
 
@@ -22,11 +24,11 @@ def login_view(request):
         user = form.login(request)
         if user:
             login(request, user)
-            return redirect(play)# Redirect to a success page.
+            return redirect(play2)# Redirect to a success page.
     return render(request, 'login.html', {'login_form': form })
 
 @login_required
-def play(request):
+def play2(request):
     user = request.user
     username = user.get_username()
     char = None
@@ -35,9 +37,10 @@ def play(request):
         char = Character.objects.get(Q(user=user))
         char_name = char.name
         room_id = char.room.name
+        char_avatar = char.avatar.url
         portal_available = Portal.objects.filter(Q(entry=char.room))
     except Character.DoesNotExist:
-        pass # redirect to createchar.html
+        return redirect(CreateCharacter)
     except Exception:
         raise Http404()
     return render(request, 'play.html', locals())
@@ -91,12 +94,42 @@ def move_char_to_direction(request, char_name, direction):
     char = Character.objects.get(name = char_name)
     char.move(direction)
     char.save()
+    portals_available = Portal.objects.filter(entry=char.room)
+    directions_available = [portal_available.direction for portal_available in portals_available if portal_available.is_enable]
+    tmp = 'game/api/' + char_name + '/move/'
+    dic = {}
+    for direction_available in directions_available:
+        dic[direction_available] = tmp + direction_available
     return Response({
-        'name': char_name,
-        'room': char.room.name,
+        'username': char.user.username,
+        'charname': char_name,
+        'chardescription': char.description,
+        'roomname': char.room.name,
+        'directions': dic
     })
 
 class UserViewSet(viewsets.ModelViewSet):
     model = User
     serializer_class = UserSerializer
     queryset = User.objects.all()
+
+#@login_required
+def CreateCharacter(request):
+    if request.method == 'POST':
+        form = NewCharacterFrom(request.POST, request.FILES)
+        print('form.is_valid', form.is_valid())
+        if form.is_valid():
+            character = Character()
+            character.user = request.user
+            character.name = form.cleaned_data['name']
+            character.description = form.cleaned_data['description']
+            character.avatar = form.cleaned_data['avatar']
+            character.room = Room.objects.get(name='1')
+            character.save()
+            # print('redirecting....')
+            return HttpResponseRedirect('play')
+            # http://stackoverflow.com/questions/11241668/what-is-reverse-in-django
+    else:
+        form = NewCharacterFrom()
+
+    return render(request, 'createcharacter.html', locals())

@@ -1,0 +1,7 @@
+<h1>Create a new character</h1>
+
+<form method="post" enctype="multipart/form-data" action="createcharacter.html">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <input type="submit"/>
+</form>

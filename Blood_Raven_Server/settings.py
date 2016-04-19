@@ -117,8 +117,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = 'test/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR + '/media/'
+MEDIA_URL = MEDIA_ROOT = BASE_DIR + '/media/'
 
 LOGIN_URL = '/game/login'
-#LOGIN_REDIRECT_URL
+# LOGIN_REDIRECT_URL =
