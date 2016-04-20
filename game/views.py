@@ -17,7 +17,6 @@ from rest_framework.response import Response
 from game.forms import NewCharacterFrom
 from rest_framework.views import APIView
 
-
 def login_view(request):
     form = LoginForm(request.POST or None)
     if request.POST and form.is_valid():
@@ -37,7 +36,7 @@ def play2(request):
         char = Character.objects.get(Q(user=user))
         char_name = char.name
         room_id = char.room.name
-        char_avatar = char.avatar.url
+        char_avatar = char.avatar
         portal_available = Portal.objects.filter(Q(entry=char.room))
     except Character.DoesNotExist:
         return redirect(CreateCharacter)
@@ -113,7 +112,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
 
-#@login_required
+@login_required
 def CreateCharacter(request):
     if request.method == 'POST':
         form = NewCharacterFrom(request.POST, request.FILES)
@@ -131,5 +130,4 @@ def CreateCharacter(request):
             # http://stackoverflow.com/questions/11241668/what-is-reverse-in-django
     else:
         form = NewCharacterFrom()
-
     return render(request, 'createcharacter.html', locals())

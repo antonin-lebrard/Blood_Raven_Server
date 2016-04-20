@@ -5,7 +5,7 @@ from game.models import Character, Portal, Room
 class CharacterAdmin(admin.ModelAdmin):
     empty_value_display = '???'
     #readonly_fields = ('user',)
-    list_display   = ('id', 'user', 'name', 'overview_description', 'room')
+    list_display   = ('id', 'user', 'name', 'overview_description', 'room', 'avatar')
     list_filter    = ('id', 'user', 'name', 'description', 'room')
     ordering       = ('id', )
     search_fields  = ('id', 'user', 'name', 'description', 'room')
@@ -20,9 +20,9 @@ class CharacterAdmin(admin.ModelAdmin):
     }),
     # Fieldset 2 : contenu
     ('info', {
-       'description': ' name, description and room',
+       'description': ' name, description, room and avatar',
         'classes': ['wide', ],
-       'fields': ('name', 'description', 'room', )
+       'fields': ('name', 'description', 'room', 'avatar',)
     }),
     )
 

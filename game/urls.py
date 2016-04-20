@@ -19,5 +19,7 @@ urlpatterns = [
     url(r'^api/character/(?P<char_name>\w{1,50})/move/(?P<direction>\w{1})$', move_char_to_direction),
     url(r'^api/user/current', current_user, name='current_user'),
     url(r'^api/', include(router.urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

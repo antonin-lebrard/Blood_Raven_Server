@@ -2,7 +2,9 @@
 {% block title %}Jouer{% endblock %}
 {% block content %}
     <h1>Bienvenue {{ username }}!</h1>
-
+    {% load staticfiles %}
+    <img src="{{ char_avatar.url }}" alt="char_avatar"/>
+    <h3>{{ char_avatar.url}}</h3>
 
     <h2>Votre personnage {{ char_name }} est situé dans la salle n° {{ room_id }}</h2>
     <h3>La(Les) direction(s) disponible(s) est(sont)</h3>

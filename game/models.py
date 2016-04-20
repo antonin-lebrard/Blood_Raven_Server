@@ -14,7 +14,7 @@ class Character(models.Model):
     name = models.CharField(max_length=20, unique=True)
     description = models.CharField(max_length=50, blank=True)
     room = models.ForeignKey(Room)
-    avatar = models.ImageField(upload_to='img')
+    avatar = models.ImageField(upload_to='img/', default='cisco.jpg')
 
     def move(self, direction):
         portal = Portal.objects.get(Q(entry=self.room) and Q(direction=direction))
