@@ -8,7 +8,7 @@ from django.views.generic import TemplateView
 router = routers.DefaultRouter()
 router.register(r'character', CharacterViewSet)
 router.register(r'room', RoomViewSet)
-router.register(r'room', UserViewSet)
+router.register(r'room', UserViewSet) #TODO: WTF
 
 urlpatterns = [
     url(r'^play2', play2, name='play2'),
