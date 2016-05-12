@@ -71,37 +71,35 @@ def current_user(request):
     username = user.get_username()
     # TODO: error try/catch
     char = Character.objects.get(user=user)
-    char_name = char.name
-    char_description = char.description
-    room_name = char.room.name
     portals_available = Portal.objects.filter(entry=char.room)
     directions_available = [portal_available.direction for portal_available in portals_available if portal_available.is_enable]
-    tmp = 'game/api/' + char_name + '/move/'
+    tmp = 'game/api/move/'
     dic = {}
     for direction_available in directions_available:
         dic[direction_available] = tmp + direction_available
     return Response({
         'username': username,
-        'charname': char_name,
-        'chardescription': char_description,
-        'roomname': room_name,
+        'charname': char.name,
+        'chardescription': char.description,
+        'roomname': char.room.name,
         'directions': dic
     })
 
-@api_view(['PUT'])
-def move_char_to_direction(request, char_name, direction):
-    char = Character.objects.get(name = char_name)
+@api_view(['GET'])
+def move_char_to_direction(request, direction):
+    user = request.user
+    char = Character.objects.get(user=user)
     char.move(direction)
     char.save()
     portals_available = Portal.objects.filter(entry=char.room)
     directions_available = [portal_available.direction for portal_available in portals_available if portal_available.is_enable]
-    tmp = 'game/api/' + char_name + '/move/'
+    tmp = 'game/api/move/'
     dic = {}
     for direction_available in directions_available:
         dic[direction_available] = tmp + direction_available
     return Response({
         'username': char.user.username,
-        'charname': char_name,
+        'charname': char.name,
         'chardescription': char.description,
         'roomname': char.room.name,
         'directions': dic
