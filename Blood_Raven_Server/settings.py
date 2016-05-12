@@ -24,7 +24,7 @@ SECRET_KEY = '1^lq1@map*p%()kz86e^2av$zwfdvc0#s-4-12ohl0+)1i-b1y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".herokuapp.com", ".researchthroughdesign.org"]
+ALLOWED_HOSTS = [".herokuapp.com", ".researchthroughdesign.org", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [

@@ -13,10 +13,12 @@ router.register(r'room', UserViewSet) #TODO: WTF
 urlpatterns = [
     url(r'^play2', play2, name='play2'),
     url(r'^play', TemplateView.as_view(template_name="index.html"), name='play'),
+    url(r'style.css', TemplateView.as_view(template_name="style.css"), name='style.css'),
+    url(r'main.dart.js', TemplateView.as_view(template_name="main.dart.js"), name='main.dart.js'),
     url(r'^login', login_view, name='login'),
     url(r'^logout', logout_view, name='logout'),
     url(r'^createcharacter', CreateCharacter, name='createcharacter'),
-    url(r'^api/character/(?P<char_name>\w{1,50})/move/(?P<direction>\w{1})$', move_char_to_direction),
+    url(r'^api/move/(?P<direction>\w{1})$', move_char_to_direction),
     url(r'^api/user/current', current_user, name='current_user'),
     url(r'^api/', include(router.urls)),
 ]
