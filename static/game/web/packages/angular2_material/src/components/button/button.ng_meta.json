@@ -1,0 +1,222 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.button.button",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "View",
+          "ViewEncapsulation",
+          "OnChanges"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "TimerWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdButton",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"[mdButton]:not(a), [mdFab]:not(a), [mdRaisedButton]:not(a)\""
+              },
+              {
+                "1": "host",
+                "2": "const {\"(mousedown)\" : \"onMousedown()\", \"(focus)\" : \"onFocus()\", \"(blur)\" : \"onBlur()\", \"[class.md-button-focus]\" : \"isKeyboardFocused\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/button/button.html\""
+              },
+              {
+                "1": "styleUrls",
+                "2": "const [\"package:angular2_material/src/components/button/button.css\"]"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ]
+      },
+      {
+        "1": "MdAnchor",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"a[mdButton], a[mdRaisedButton], a[mdFab]\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"disabled\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"(click)\" : \"onClick(\\$event)\", \"(mousedown)\" : \"onMousedown()\", \"(focus)\" : \"onFocus()\", \"(blur)\" : \"onBlur()\", \"[tabIndex]\" : \"tabIndex\", \"[class.md-button-focus]\" : \"isKeyboardFocused\", \"[attr.aria-disabled]\" : \"isAriaDisabled\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/button/button.html\""
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "6": [
+          "OnChanges"
+        ]
+      }
+    ],
+    "6": "button.dart",
+    "10": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "MdButton": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "[mdButton]:not(a), [mdFab]:not(a), [mdRaisedButton]:not(a)",
+      "exportAs": null,
+      "type": {
+        "name": "MdButton",
+        "moduleUrl": "asset:angular2_material/lib/src/components/button/button.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {
+        "focus": "onFocus()",
+        "blur": "onBlur()",
+        "mousedown": "onMousedown()"
+      },
+      "hostProperties": {
+        "class.md-button-focus": "isKeyboardFocused"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<span class=\"md-button-wrapper\"><ng-content></ng-content></span>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/button/button.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/button/button.css"
+        ],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "MdAnchor": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "a[mdButton], a[mdRaisedButton], a[mdFab]",
+      "exportAs": null,
+      "type": {
+        "name": "MdAnchor",
+        "moduleUrl": "asset:angular2_material/lib/src/components/button/button.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "click": "onClick($event)",
+        "focus": "onFocus()",
+        "blur": "onBlur()",
+        "mousedown": "onMousedown()"
+      },
+      "hostProperties": {
+        "tabIndex": "tabIndex",
+        "attr.aria-disabled": "isAriaDisabled",
+        "class.md-button-focus": "isKeyboardFocused"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        3
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<span class=\"md-button-wrapper\"><ng-content></ng-content></span>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/button/button.html",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<html><head></head><body><div id="player">
+    <div id="portrait">
+        <img src="">
+    </div>
+    <div id="inventory-box">
+        <ul>
+            <li *ngfor="#object of services[game_object_service]">
+                <mdbutton class="list-object">{{ object.name }}</mdbutton>
+            </li>
+        </ul>
+    </div>
+</div></body></html>

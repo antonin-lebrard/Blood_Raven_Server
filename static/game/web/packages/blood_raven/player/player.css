@@ -1,0 +1,31 @@
+#portrait{
+    float: left;
+    max-width: 250px;
+    max-height: 400px;
+    height: 200px;
+    width: 250px;
+}
+#inventory-box{
+    float: left;
+    max-width: 250px;
+    max-height: 400px;
+    height: 200px;
+    width: 250px;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.55);
+}
+ul{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
+}
+li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 25px;
+    line-height: 25px;
+}

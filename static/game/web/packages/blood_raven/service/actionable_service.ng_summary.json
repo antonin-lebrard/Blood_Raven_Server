@@ -1,0 +1,35 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.actionable_service",
+    "3": [
+      {
+        "1": "dart:collection",
+        "5": false
+      },
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/utils.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "ActionableService",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "actionable_service.dart"
+  }
+}

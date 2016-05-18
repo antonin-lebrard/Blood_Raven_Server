@@ -1,0 +1,75 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.progress_circular.progress_circular",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "ViewEncapsulation"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdProgressCircular",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-progress-circular\""
+              },
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/progress-circular/progress_circular.html\""
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ]
+      }
+    ],
+    "6": "progress_circular.dart"
+  },
+  "MdProgressCircular": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-progress-circular",
+      "exportAs": null,
+      "type": {
+        "name": "MdProgressCircular",
+        "moduleUrl": "asset:angular2_material/lib/src/components/progress-circular/progress_circular.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<div class=\"md-spinner-wrapper\">\n  <div class=\"md-inner\">\n    <div class=\"md-gap\"></div>\n    <div class=\"md-left\">\n      <div class=\"md-half-circle\"></div>\n    </div>\n    <div class=\"md-right\">\n      <div class=\"md-half-circle\"></div>\n    </div>\n  </div>\n</div>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/progress-circular/progress_circular.html",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

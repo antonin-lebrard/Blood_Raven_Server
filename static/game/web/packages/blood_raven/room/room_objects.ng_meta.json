@@ -1,0 +1,122 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.room_objects",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2_material/src/components/button/button.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2_rbi/directives.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/service/game_object_service.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "RoomObjects",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'room-comp'"
+              },
+              {
+                "1": "templateUrl",
+                "2": "'room_objects.html'"
+              },
+              {
+                "1": "viewProviders",
+                "2": "const [GameObjectService, MdButton, MaterialButton]"
+              },
+              {
+                "1": "styleUrls",
+                "2": "const ['room_objects.css', '../globalComponentsPart.css']"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "GameObjectService",
+            "4": "game_object_service"
+          }
+        ]
+      }
+    ],
+    "6": "room_objects.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2_material/src/components/button/button.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:angular2_rbi/directives.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_component.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:blood_raven/service/game_object_service.template.dart",
+        "4": "i4"
+      }
+    ]
+  },
+  "RoomObjects": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "room-comp",
+      "exportAs": null,
+      "type": {
+        "name": "RoomObjects",
+        "moduleUrl": "asset:blood_raven/lib/room/room_objects.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div id=\"room\">\r\n    <div id=\"room-objects-box\">\r\n        <ul>\r\n            <li *ngFor=\"#object of services[game_object_service]\">\r\n                <mdButton class=\"list-object\">{{ object.name }}</mdButton>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</div>",
+        "templateUrl": "asset:blood_raven/lib/room/room_objects.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:blood_raven/lib/room/room_objects.css",
+          "asset:blood_raven/lib/globalComponentsPart.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

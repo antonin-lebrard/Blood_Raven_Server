@@ -1,9 +1,9 @@
-from Blood_Raven_Server import settings
 from django.conf.urls import url, include
-from django.conf.urls.static import static
 from game.views import login_view, logout_view, RoomViewSet, CharacterViewSet, current_user, UserViewSet, move_char_to_direction, play2, CreateCharacter
 from rest_framework import routers
 from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from Blood_Raven_Server import settings
 
 router = routers.DefaultRouter()
 router.register(r'character', CharacterViewSet)

@@ -1,0 +1,120 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.switcher._switch",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "ViewEncapsulation",
+          "Attribute"
+        ],
+        "5": false
+      },
+      {
+        "1": "../checkbox/checkbox.dart",
+        "2": [
+          "MdCheckbox"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdSwitch",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-switch\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"checked\", \"disabled\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"role\" : \"checkbox\", \"[attr.aria-checked]\" : \"checked\", \"[attr.aria-disabled]\" : \"disabled_\", \"(keydown)\" : \"onKeydown(\\$event)\"}"
+              },
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/switcher/switch.html\""
+              },
+              {
+                "1": "directives",
+                "2": "const []"
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"tabindex\")"
+            ],
+            "4": "tabindex"
+          }
+        ]
+      }
+    ],
+    "6": "switch.dart"
+  },
+  "MdSwitch": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-switch",
+      "exportAs": null,
+      "type": {
+        "name": "MdSwitch",
+        "moduleUrl": "asset:angular2_material/lib/src/components/switcher/switch.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "checked": "checked",
+        "disabled": "disabled"
+      },
+      "outputs": {},
+      "hostListeners": {
+        "keydown": "onKeydown($event)"
+      },
+      "hostProperties": {
+        "attr.aria-disabled": "disabled_",
+        "attr.aria-checked": "checked"
+      },
+      "hostAttributes": {
+        "role": "checkbox"
+      },
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>@import \"package:angular2_material/src/components/switcher/switch.css\";</style>\n\n<div (click)=\"toggle($event)\">\n  <div class=\"md-switch-container\">\n    <div class=\"md-switch-bar\"></div>\n    <div class=\"md-switch-thumb-container\">\n      <div class=\"md-switch-thumb\"></div>\n    </div>\n  </div>\n  <div class=\"md-switch-label\"><ng-content></ng-content></div>\n</div>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/switcher/switch.html",
+        "styles": [
+          ""
+        ],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/switcher/switch.css"
+        ],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  }
+}

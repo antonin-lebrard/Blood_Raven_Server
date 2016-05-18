@@ -1,0 +1,26 @@
+<html><head></head><body><div id="dir-comp">
+    <div id="up-down">
+        <mdbutton [class.disabled]="up==null" id="up" (click)="up==null||up.doDefault()">up</mdbutton>
+        <mdbutton [class.disabled]="down==null" id="down" (click)="down==null||down.doDefault()">down</mdbutton>
+    </div>
+    <div id="cardinal">
+        <div id="north"><mdbutton [class.disabled]="north==null" (click)="north==null||north.doDefault()">N</mdbutton></div>
+        <div id="ne-nw">
+            <mdbutton [class.disabled]="n_east==null" (click)="n_east==null||n_east.doDefault()">N-E</mdbutton>
+            <mdbutton [class.disabled]="n_west==null" (click)="n_west==null||n_west.doDefault()">N-W</mdbutton>
+        </div>
+        <div id="e-w">
+            <mdbutton [class.disabled]="east==null" (click)="east==null||east.doDefault()">E</mdbutton>
+            <mdbutton [class.disabled]="west==null" (click)="west==null||west.doDefault()">W</mdbutton>
+        </div>
+        <div id="se-sw">
+            <mdbutton [class.disabled]="s_east==null" (click)="s_east==null||s_east.doDefault()">S-E</mdbutton>
+            <mdbutton [class.disabled]="s_west==null" (click)="s_west==null||s_west.doDefault()">S-W</mdbutton>
+        </div>
+        <div id="south"><mdbutton [class.disabled]="south==null" (click)="south==null||south.doDefault()">S</mdbutton></div>
+    </div>
+    <div id="in-out">
+        <mdbutton [class.disabled]="into==null" id="in" (click)="into==null||into.doDefault()">in</mdbutton>
+        <mdbutton [class.disabled]="out==null" id="out" (click)="out==null||out.doDefault()">out</mdbutton>
+    </div>
+</div></body></html>

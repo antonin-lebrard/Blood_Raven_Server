@@ -1,0 +1,148 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.app",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/direction/direction.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/player/player.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/room/room_objects.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/story/story_area.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/story/link/link.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/http_endpoint/http.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "App",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'app'"
+              },
+              {
+                "1": "templateUrl",
+                "2": "'app.html'"
+              },
+              {
+                "1": "directives",
+                "2": "const [DirectionComponent, PlayerComponent, RoomObjects, StoryArea, Link]"
+              },
+              {
+                "1": "styleUrls",
+                "2": "const ['app.css']"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "8": [
+          {
+            "2": "DirectionComponent"
+          },
+          {
+            "2": "PlayerComponent"
+          },
+          {
+            "2": "RoomObjects"
+          },
+          {
+            "2": "StoryArea"
+          },
+          {
+            "2": "Link"
+          }
+        ]
+      }
+    ],
+    "6": "app.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:blood_raven/direction/direction.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:blood_raven/player/player.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:blood_raven/room/room_objects.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:blood_raven/story/story_area.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:blood_raven/story/link/link.template.dart",
+        "4": "i5"
+      },
+      {
+        "1": "package:blood_raven/http_endpoint/http.template.dart",
+        "4": "i6"
+      }
+    ]
+  },
+  "App": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "app",
+      "exportAs": null,
+      "type": {
+        "name": "App",
+        "moduleUrl": "asset:blood_raven/lib/app.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div id=\"app\">\r\n    <div id=\"main-components\">\r\n        <story-comp class=\"component\"></story-comp>\r\n    </div>\r\n    <div id=\"actions-components\">\r\n        <dir-comp class=\"component\"></dir-comp>\r\n        <player-comp class=\"component\"></player-comp>\r\n        <room-comp class=\"component\"></room-comp>\r\n    </div>\r\n</div>",
+        "templateUrl": "asset:blood_raven/lib/app.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:blood_raven/lib/app.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

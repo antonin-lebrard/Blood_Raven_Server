@@ -17,11 +17,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from Blood_Raven_Server.views import home, register
+from django.conf.urls.static import static
+from Blood_Raven_Server import settings
 
 urlpatterns = [
-    url(r'^home', home, name='home'),
+    url(r'^$', home, name='home'),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin', admin.site.urls),
     url(r'^game/', include('game.urls')),
     url(r'^register', register, name='register'),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

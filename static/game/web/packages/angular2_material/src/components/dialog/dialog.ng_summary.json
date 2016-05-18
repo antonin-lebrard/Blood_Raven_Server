@@ -1,0 +1,317 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.dialog.dialog",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "bind",
+          "provide",
+          "Component",
+          "ComponentRef",
+          "Directive",
+          "DynamicComponentLoader",
+          "ElementRef",
+          "Host",
+          "Injectable",
+          "ResolvedProvider",
+          "SkipSelf",
+          "Injector",
+          "View",
+          "ViewEncapsulation"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper",
+          "PromiseWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "isPresent",
+          "Type"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/platform/dom/dom_adapter.dart",
+        "2": [
+          "DOM"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/browser.dart",
+        "2": [
+          "MouseEvent",
+          "KeyboardEvent"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2_material/src/core/key_codes.dart",
+        "2": [
+          "KeyCodes"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdDialog",
+        "4": [
+          {
+            "1": "Injectable",
+            "4": false,
+            "5": false,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "DynamicComponentLoader",
+            "4": "loader"
+          }
+        ]
+      },
+      {
+        "1": "MdDialogContainer",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-dialog-container\""
+              },
+              {
+                "1": "host",
+                "2": "const {\"class\" : \"md-dialog\", \"tabindex\" : \"0\", \"(body:keydown)\" : \"documentKeypress(\\$event)\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              },
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/dialog/dialog.html\""
+              },
+              {
+                "1": "directives",
+                "2": "const [MdDialogContent]"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "8": [
+          {
+            "2": "MdDialogContent"
+          }
+        ]
+      },
+      {
+        "1": "MdDialogContent",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-dialog-content\""
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "MdDialogContainer",
+            "3": [
+              "const Host()",
+              "const SkipSelf()"
+            ],
+            "4": "dialogContainer"
+          },
+          {
+            "1": "ElementRef",
+            "4": "elementRef"
+          }
+        ]
+      },
+      {
+        "1": "MdBackdrop",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-backdrop\""
+              },
+              {
+                "1": "host",
+                "2": "const {\"(click)\" : \"onClick()\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "template",
+                "2": "\"\""
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "MdDialogRef",
+            "4": "dialogRef"
+          }
+        ]
+      }
+    ],
+    "6": "dialog.dart"
+  },
+  "MdDialogContent": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "md-dialog-content",
+      "exportAs": null,
+      "type": {
+        "name": "MdDialogContent",
+        "moduleUrl": "asset:angular2_material/lib/src/components/dialog/dialog.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null
+    }
+  },
+  "MdBackdrop": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-backdrop",
+      "exportAs": null,
+      "type": {
+        "name": "MdBackdrop",
+        "moduleUrl": "asset:angular2_material/lib/src/components/dialog/dialog.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {
+        "click": "onClick()"
+      },
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "",
+        "templateUrl": "asset:angular2_material/lib/src/components/dialog/dialog.dart",
+        "styles": [],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  },
+  "MdDialogContainer": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-dialog-container",
+      "exportAs": null,
+      "type": {
+        "name": "MdDialogContainer",
+        "moduleUrl": "asset:angular2_material/lib/src/components/dialog/dialog.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {
+        "body:keydown": "documentKeypress($event)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {
+        "tabindex": "0",
+        "class": "md-dialog"
+      },
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>\n  .md-dialog {\n    position: absolute;\n    z-index: 80;\n\n    /** Center the dialog. */\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n\n    width: 300px;\n    height: 300px;\n\n    background-color: white;\n    border: 1px solid black;\n    box-shadow: 0 4px 4px;;\n\n    padding: 20px;\n  }\n\n  .md-backdrop {\n    position: absolute;\n    top:0 ;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.12);\n  }\n</style>\n\n<md-dialog-content></md-dialog-content>\n<div tabindex=\"0\" (focus)=\"wrapFocus()\"></div>\n\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/dialog/dialog.html",
+        "styles": [
+          "\n  .md-dialog {\n    position: absolute;\n    z-index: 80;\n\n    /** Center the dialog. */\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n\n    width: 300px;\n    height: 300px;\n\n    background-color: white;\n    border: 1px solid black;\n    box-shadow: 0 4px 4px;;\n\n    padding: 20px;\n  }\n\n  .md-backdrop {\n    position: absolute;\n    top:0 ;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.12);\n  }\n"
+        ],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

@@ -70,7 +70,10 @@ def current_user(request):
     user = request.user
     username = user.get_username()
     # TODO: error try/catch
-    char = Character.objects.get(user=user)
+    try:
+        char = Character.objects.get(user=user)
+    except:
+        pass
     portals_available = Portal.objects.filter(entry=char.room)
     directions_available = [portal_available.direction for portal_available in portals_available if portal_available.is_enable]
     tmp = 'game/api/move/'

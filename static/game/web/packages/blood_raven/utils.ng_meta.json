@@ -1,0 +1,14 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.utils",
+    "4": [
+      {
+        "1": "package:blood_raven/utils/logger.dart"
+      },
+      {
+        "1": "package:blood_raven/utils/delivery.dart"
+      }
+    ],
+    "6": "utils.dart"
+  }
+}

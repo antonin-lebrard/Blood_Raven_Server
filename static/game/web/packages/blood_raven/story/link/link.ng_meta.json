@@ -1,0 +1,113 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.link",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/utils.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/service/actionable_service.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "Link",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'link-comp'"
+              },
+              {
+                "1": "templateUrl",
+                "2": "'link.html'"
+              },
+              {
+                "1": "styleUrls",
+                "2": "const ['link.css', '../../globalComponentsPart.css']"
+              },
+              {
+                "1": "inputs",
+                "2": "const ['line']"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "ActionableService",
+            "4": "service"
+          }
+        ],
+        "6": [
+          "OnInit"
+        ]
+      }
+    ],
+    "6": "link.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:blood_raven/utils.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:blood_raven/service/actionable_service.template.dart",
+        "4": "i2"
+      }
+    ]
+  },
+  "Link": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "link-comp",
+      "exportAs": null,
+      "type": {
+        "name": "Link",
+        "moduleUrl": "asset:blood_raven/lib/story/link/link.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "line": "line"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div id=\"link-comp\">\r\n    <span *ngFor=\"#part of lineParts\">\r\n        <span [class.link]=\"part.isLink\" (click)=\"part.doDefault()\">{{part}}</span>\r\n    </span>\r\n</div>",
+        "templateUrl": "asset:blood_raven/lib/story/link/link.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:blood_raven/lib/story/link/link.css",
+          "asset:blood_raven/lib/globalComponentsPart.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

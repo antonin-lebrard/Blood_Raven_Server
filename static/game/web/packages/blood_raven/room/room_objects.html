@@ -1,0 +1,9 @@
+<html><head></head><body><div id="room">
+    <div id="room-objects-box">
+        <ul>
+            <li *ngfor="#object of services[game_object_service]">
+                <mdbutton class="list-object">{{ object.name }}</mdbutton>
+            </li>
+        </ul>
+    </div>
+</div></body></html>

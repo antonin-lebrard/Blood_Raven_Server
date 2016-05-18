@@ -1,0 +1,139 @@
+{
+  "ngDeps": {
+    "1": "blood_raven.story_area",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/utils.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/service/story_service.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/service/actionable_service.dart",
+        "5": false
+      },
+      {
+        "1": "package:blood_raven/story/link/link.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "StoryArea",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'story-comp'"
+              },
+              {
+                "1": "templateUrl",
+                "2": "'story_area.html'"
+              },
+              {
+                "1": "viewProviders",
+                "2": "const [StoryService, ActionableService]"
+              },
+              {
+                "1": "directives",
+                "2": "const [Link]"
+              },
+              {
+                "1": "styleUrls",
+                "2": "const ['story_area.css', '../globalComponentsPart.css']"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "StoryService",
+            "4": "service"
+          }
+        ],
+        "8": [
+          {
+            "2": "Link"
+          }
+        ]
+      }
+    ],
+    "6": "story_area.dart",
+    "10": [
+      {
+        "1": "package:angular2/angular2.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:blood_raven/abstract/abstract_component.template.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:blood_raven/utils.template.dart",
+        "4": "i2"
+      },
+      {
+        "1": "package:blood_raven/service/story_service.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "package:blood_raven/service/actionable_service.template.dart",
+        "4": "i4"
+      },
+      {
+        "1": "package:blood_raven/story/link/link.template.dart",
+        "4": "i5"
+      }
+    ]
+  },
+  "StoryArea": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "story-comp",
+      "exportAs": null,
+      "type": {
+        "name": "StoryArea",
+        "moduleUrl": "asset:blood_raven/lib/story/story_area.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<div id=\"story-area\">\r\n    <div id=\"text-container\">\r\n        <div id=\"header-name\">Blood Raven</div>\r\n        <div id=\"main-text-area\">\r\n            <div id=\"content\">\r\n                <div *ngFor=\"#paragraph of services[story_service]\">\r\n                    <link-comp [line]=\"paragraph\"></link-comp>\r\n                </div>\r\n            </div>\r\n            <div id=\"dropping-shadow\"></div>\r\n        </div>\r\n    </div>\r\n</div>",
+        "templateUrl": "asset:blood_raven/lib/story/story_area.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:blood_raven/lib/story/story_area.css",
+          "asset:blood_raven/lib/globalComponentsPart.css"
+        ],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

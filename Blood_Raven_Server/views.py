@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 def home(request):
+    print(request.user)
+    base_template = 'base.html' if not request.user == 'AnonymousUser' else 'base_logged.html'
     username = request.user.username or 'inconnu'
     return render(request, 'home.html', locals())
 

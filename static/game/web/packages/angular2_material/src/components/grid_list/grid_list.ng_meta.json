@@ -1,0 +1,248 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.grid_list.grid_list",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Component",
+          "View",
+          "ViewEncapsulation",
+          "Host",
+          "SkipSelf",
+          "OnChanges",
+          "OnDestroy",
+          "AfterContentChecked"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "ListWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/lang.dart",
+        "2": [
+          "StringWrapper",
+          "isPresent",
+          "isString",
+          "NumberWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/math.dart",
+        "2": [
+          "Math"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdGridList",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-grid-list\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"cols\", \"rowHeight\", \"gutterSize\"]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/grid_list/grid_list.html\""
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "6": [
+          "AfterContentChecked"
+        ]
+      },
+      {
+        "1": "MdGridTile",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-grid-tile\""
+              },
+              {
+                "1": "inputs",
+                "2": "const [\"rowspan\", \"colspan\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"role\" : \"listitem\", \"[style.height]\" : \"style.height\", \"[style.width]\" : \"style.width\", \"[style.top]\" : \"style.top\", \"[style.left]\" : \"style.left\", \"[style.marginTop]\" : \"style.marginTop\", \"[style.paddingTop]\" : \"style.paddingTop\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          },
+          {
+            "1": "View",
+            "3": [
+              {
+                "1": "templateUrl",
+                "2": "\"package:angular2_material/src/components/grid_list/grid_tile.html\""
+              },
+              {
+                "1": "encapsulation",
+                "2": "ViewEncapsulation.None"
+              }
+            ],
+            "4": true,
+            "5": false,
+            "6": false,
+            "7": false,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "MdGridList",
+            "3": [
+              "const SkipSelf()",
+              "const Host()"
+            ],
+            "4": "gridList"
+          }
+        ],
+        "6": [
+          "OnDestroy",
+          "OnChanges"
+        ]
+      }
+    ],
+    "6": "grid_list.dart",
+    "10": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      }
+    ]
+  },
+  "MdGridList": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-grid-list",
+      "exportAs": null,
+      "type": {
+        "name": "MdGridList",
+        "moduleUrl": "asset:angular2_material/lib/src/components/grid_list/grid_list.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "cols": "cols",
+        "rowHeight": "rowHeight",
+        "gutterSize": "gutterSize"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        5
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>\n  md-grid-tile {\n    background: lightblue;\n  }\n</style>\n\n<div class=\"md-grid-list\">\n  <ng-content></ng-content>\n</div>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/grid_list/grid_list.html",
+        "styles": [
+          "\n  md-grid-tile {\n    background: lightblue;\n  }\n"
+        ],
+        "styleUrls": [],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  },
+  "MdGridTile": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "md-grid-tile",
+      "exportAs": null,
+      "type": {
+        "name": "MdGridTile",
+        "moduleUrl": "asset:angular2_material/lib/src/components/grid_list/grid_list.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "rowspan": "rowspan",
+        "colspan": "colspan"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "style.width": "style.width",
+        "style.top": "style.top",
+        "style.marginTop": "style.marginTop",
+        "style.height": "style.height",
+        "style.left": "style.left",
+        "style.paddingTop": "style.paddingTop"
+      },
+      "hostAttributes": {
+        "role": "listitem"
+      },
+      "lifecycleHooks": [
+        1,
+        3
+      ],
+      "template": {
+        "encapsulation": 2,
+        "template": "<style>@import \"package:angular2_material/src/components/grid_list/grid-list.css\";</style>\n\n<figure>\n  <ng-content></ng-content>\n</figure>\n",
+        "templateUrl": "asset:angular2_material/lib/src/components/grid_list/grid_tile.html",
+        "styles": [
+          ""
+        ],
+        "styleUrls": [
+          "asset:angular2_material/lib/src/components/grid_list/grid-list.css"
+        ],
+        "ngContentSelectors": [
+          "*"
+        ]
+      }
+    }
+  }
+}

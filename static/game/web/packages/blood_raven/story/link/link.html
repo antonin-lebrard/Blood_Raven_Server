@@ -1,0 +1,5 @@
+<html><head></head><body><div id="link-comp">
+    <span *ngfor="#part of lineParts">
+        <span [class.link]="part.isLink" (click)="part.doDefault()">{{part}}</span>
+    </span>
+</div></body></html>

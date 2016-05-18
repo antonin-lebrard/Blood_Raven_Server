@@ -1,0 +1,185 @@
+{
+  "ngDeps": {
+    "1": "angular2_material.src.components.input.input",
+    "3": [
+      {
+        "1": "package:angular2/core.dart",
+        "2": [
+          "Directive",
+          "Attribute",
+          "Host",
+          "SkipSelf",
+          "AfterContentChecked"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/async.dart",
+        "2": [
+          "ObservableWrapper",
+          "EventEmitter"
+        ],
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "MdInputContainer",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-input-container\""
+              },
+              {
+                "1": "host",
+                "2": "const {\"[class.md-input-has-value]\" : \"inputHasValue\", \"[class.md-input-focused]\" : \"inputHasFocus\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"id\")"
+            ],
+            "4": "id"
+          }
+        ],
+        "6": [
+          "AfterContentChecked"
+        ]
+      },
+      {
+        "1": "MdInput",
+        "4": [
+          {
+            "1": "Directive",
+            "3": [
+              {
+                "1": "selector",
+                "2": "\"md-input-container input\""
+              },
+              {
+                "1": "outputs",
+                "2": "const [\"mdChange\", \"mdFocusChange\"]"
+              },
+              {
+                "1": "host",
+                "2": "const {\"class\" : \"md-input\", \"(input)\" : \"updateValue(\\$event)\", \"(focus)\" : \"setHasFocus(true)\", \"(blur)\" : \"setHasFocus(false)\"}"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": false,
+            "7": true,
+            "8": false
+          }
+        ],
+        "5": [
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"value\")"
+            ],
+            "4": "value"
+          },
+          {
+            "1": "MdInputContainer",
+            "3": [
+              "const SkipSelf()",
+              "const Host()"
+            ],
+            "4": "container"
+          },
+          {
+            "1": "String",
+            "3": [
+              "const Attribute(\"id\")"
+            ],
+            "4": "id"
+          }
+        ]
+      }
+    ],
+    "6": "input.dart",
+    "10": [
+      {
+        "1": "package:angular2/core.template.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/src/facade/async.template.dart",
+        "4": "i1"
+      }
+    ]
+  },
+  "MdInputContainer": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "md-input-container",
+      "exportAs": null,
+      "type": {
+        "name": "MdInputContainer",
+        "moduleUrl": "asset:angular2_material/lib/src/components/input/input.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {
+        "class.md-input-has-value": "inputHasValue",
+        "class.md-input-focused": "inputHasFocus"
+      },
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        5
+      ],
+      "template": null
+    }
+  },
+  "MdInput": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "md-input-container input",
+      "exportAs": null,
+      "type": {
+        "name": "MdInput",
+        "moduleUrl": "asset:angular2_material/lib/src/components/input/input.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {
+        "mdChange": "mdChange",
+        "mdFocusChange": "mdFocusChange"
+      },
+      "hostListeners": {
+        "focus": "setHasFocus(true)",
+        "input": "updateValue($event)",
+        "blur": "setHasFocus(false)"
+      },
+      "hostProperties": {},
+      "hostAttributes": {
+        "class": "md-input"
+      },
+      "lifecycleHooks": [],
+      "template": null
+    }
+  }
+}

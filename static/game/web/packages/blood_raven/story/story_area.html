@@ -1,0 +1,13 @@
+<html><head></head><body><div id="story-area">
+    <div id="text-container">
+        <div id="header-name">Blood Raven</div>
+        <div id="main-text-area">
+            <div id="content">
+                <div *ngfor="#paragraph of services[story_service]">
+                    <link-comp [line]="paragraph"></link-comp>
+                </div>
+            </div>
+            <div id="dropping-shadow"></div>
+        </div>
+    </div>
+</div></body></html>

@@ -22,6 +22,6 @@ class LoginForm(forms.Form):
         return user
 
 class NewCharacterFrom(forms.Form):
-    name = forms.CharField(max_length=20)
-    description = forms.CharField(max_length=50)
+    name = forms.CharField(max_length=20, label = '', widget=forms.TextInput(attrs={'placeholder': 'Nom'}))
+    description = forms.CharField(max_length=50, label = '', widget=forms.TextInput(attrs={'placeholder': 'Description'}))
     avatar = forms.ImageField()
