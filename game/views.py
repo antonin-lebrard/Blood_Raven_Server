@@ -17,6 +17,13 @@ from rest_framework.response import Response
 from game.forms import NewCharacterFrom
 from rest_framework.views import APIView
 
+direction_to_str = {
+    'E': 'east',
+    'W': 'west',
+    'N': 'north',
+    'S': 'south'
+}
+
 def login_view(request):
     form = LoginForm(request.POST or None)
     if request.POST and form.is_valid():
@@ -80,10 +87,16 @@ def current_user(request):
     dic = {}
     for direction_available in directions_available:
         dic[direction_available] = tmp + direction_available
+    dir_string = ''
+    for dir in list(dic.keys()):
+        dir_string += direction_to_str[dir] + ', '
+    dir_string = dir_string[:-2]
     return Response({
         'username': username,
         'charname': char.name,
         'chardescription': char.description,
+        'story' : ['You are in the room ' + char.room.name + '.',
+                   'You face ' + str(len(dic)) + ' directions : ' + dir_string],
         'roomname': char.room.name,
         'directions': dic
     })
@@ -100,10 +113,17 @@ def move_char_to_direction(request, direction):
     dic = {}
     for direction_available in directions_available:
         dic[direction_available] = tmp + direction_available
+    dir_string = ''
+    for dir in list(dic.keys()):
+        dir_string += direction_to_str[dir] + ', '
+    dir_string = dir_string[:-2]
     return Response({
         'username': char.user.username,
         'charname': char.name,
         'chardescription': char.description,
+        'story' : ['You move into ' + direction_to_str[direction] + '.',
+                   'You are in the room ' + char.room.name + '.',
+                   'You face ' + str(len(dic)) + ' directions : ' + dir_string],
         'roomname': char.room.name,
         'directions': dic
     })
