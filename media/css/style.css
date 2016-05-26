@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+#centerVertical {
+    transform: translateY(50%);
+}
+header a {
+    text-decoration: blink;
+    border: 1px solid whitesmoke;
+    padding: 1px 5px 1px 5px;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgba(196,196,196,1);
+}
+input {
+    border-style: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+button {
+    cursor: pointer;
+    border-style: none;
+    background-color: inherit;
+    border-bottom: 1px solid grey;
+    box-shadow: 1px 1px 1px 0 rgba(196,196,196,1);
+    border-radius: 2px;
+}

@@ -6,21 +6,23 @@
 </head>
 
 <body>
-	<header>
-		<nav>
-			<a href="{% url 'home' %}">Accueil</a> |
-            <a href="{% url 'play' %}">Jouer</a> |
-            {% block logged %}{% endblock %}
-            <a href="{% url 'register' %}">S'inscrire</a>
-		</nav>
-	</header>
-    <section>
-           {% block content %}{% endblock %}
-    </section>
-	<footer>
-        {% load static %}
-        <img src="{% static 'Blood_Raven_Server/img/blood_raven.jpg' %}">
-		<p>Blood Raven</p>
-	</footer>
+    <div id="centerVertical">
+        <header>
+            <nav>
+                <a href="{% url 'home' %}">Accueil</a> |
+                <a href="{% url 'play' %}">Jouer</a> |
+                {% block logged %}{% endblock %}
+                <a href="{% url 'register' %}">S'inscrire</a>
+            </nav>
+        </header>
+        <section>
+            {% block content %}{% endblock %}
+        </section>
+        <footer>
+            {% load static %}
+            <img src="{% static 'Blood_Raven_Server/img/blood_raven.jpg' %}">
+            <p>Blood Raven</p>
+        </footer>
+    </div>
 </body>
 </html>
